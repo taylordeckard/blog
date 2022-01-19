@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.taylordeckard.me/blog/posts/hugo-tutorial/</loc>
+    <lastmod>2021-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.taylordeckard.me/blog/posts/</loc>
+    <lastmod>2021-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.taylordeckard.me/blog/</loc>
+    <lastmod>2021-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.taylordeckard.me/blog/archives/</loc>
+  </url><url>
+    <loc>https://www.taylordeckard.me/blog/categories/</loc>
+  </url><url>
+    <loc>https://www.taylordeckard.me/blog/search/</loc>
+  </url><url>
+    <loc>https://www.taylordeckard.me/blog/tags/</loc>
+  </url>
+</urlset>

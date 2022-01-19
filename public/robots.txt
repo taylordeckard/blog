@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://www.taylordeckard.me/blog/sitemap.xml
