@@ -1,0 +1,51 @@
+resources:
+- name: blog-git
+  type: git
+  icon: github
+  source:
+    uri: https://github.com/taylordeckard/blog.git
+    username: (("github".access_token))
+    password: x-oauth-basic
+    branch: main
+    paths:
+    - public/*
+    - public/**/*
+
+jobs:
+- name: set-self
+  plan:
+  - get: blog-git
+    trigger: true
+  - set_pipeline: deploy-blog
+    file: blog-git/.concourse/deploy.yaml
+- name: configure
+  plan:
+  - get: blog-git
+    passed: [set-self]
+    trigger: true
+  - task: sync-files
+    config:
+      platform: linux
+      image_resource:
+        type: registry-image
+        source:
+          repository: node
+          tag: 14-alpine
+      inputs:
+      - name: warbler-git
+      run:
+        path: ash
+        args:
+        - -c
+        - |
+          set -e
+          apk update
+          apk add openssh rsync
+          mkdir -p ~/.ssh
+          echo "((nfs.private_key))" > ~/.ssh/id_rsa
+          chmod 400 ~/.ssh/id_rsa
+          ssh-keyscan 10.0.1.198 >> ~/.ssh/known_hosts
+          cd blog-git
+          chmod -R 777 public
+          ssh concourse@10.0.1.198 'rm -fr /mnt/shared/cdn/blog'
+          rsync -r public/* concourse@10.0.1.198:/mnt/shared/cdn/blog/.
