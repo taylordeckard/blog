@@ -48,4 +48,5 @@ jobs:
           cd blog-git
           chmod -R 777 public
           ssh concourse@10.0.1.198 'rm -fr /mnt/shared/cdn/blog'
+          ssh concourse@10.0.1.198 'mkdir -p /mnt/shared/cdn/blog'
           rsync -r public/* concourse@10.0.1.198:/mnt/shared/cdn/blog/.
