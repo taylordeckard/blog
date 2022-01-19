@@ -32,7 +32,7 @@ jobs:
           repository: node
           tag: 14-alpine
       inputs:
-      - name: warbler-git
+      - name: blog-git
       run:
         path: ash
         args:
