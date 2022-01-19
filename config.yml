@@ -15,7 +15,7 @@ minify:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: Taylor's Blog
+  title: Blog
   description: "Things that happen to me"
   keywords: [Blog, Programming]
   author: taylordeckard
@@ -49,7 +49,7 @@ params:
     # safari_pinned_tab: "<link / abs url>"
 
   label:
-    text: "Home"
+    text: "Blog"
     # icon: /apple-touch-icon.png
     # iconHeight: 35
 
@@ -93,7 +93,7 @@ params:
     hiddenInSingle: true # hide on single page
 
   editPost:
-    URL: "https://github.com/taylordeckard/blog/content"
+    URL: "https://github.com/taylordeckard/blog/tree/main/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
