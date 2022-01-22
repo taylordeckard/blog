@@ -81,6 +81,14 @@ services:
     networks:
       - elastic
 
+volumes:
+  data01:
+    driver: local
+  data02:
+    driver: local
+  data03:
+    driver: local
+
 # ES Nodes run on a shared network that is bridged to the local machine
 networks:
   elastic:
