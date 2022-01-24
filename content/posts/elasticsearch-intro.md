@@ -227,6 +227,60 @@ curl -X GET 'localhost:9200/assets/_search?pretty' \
   }'
 ```
 
+This works fine, but takes a while. There is a more optimal solution for bulk insert: make use the [Elasticsearch bulk helper](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/client-helpers.html#bulk-helper). I can use the javascript Elasticsearch client `@elastic/elasticsearch`.
+
+```bash
+npm i -S  @elastic/elasticsearch
+```
+
+I'll also get rid of `node-fetch` since I'll be using the ES Client to make requests to Elasticsearch. 
+
+```javascript
+import faker from 'community-faker';
+import { Client } from '@elastic/elasticsearch';
+
+const NUM_DOCUMENTS = 10000;
+const HOST = 'http://localhost:9200';
+const INDEX = 'assets';
+// Global variable to count the number of records that have been inserted
+let numInserted = 0;
+
+// Function to generate a random document
+function getRandomDocument () {
+  return {
+    name: faker.name.findName(),
+    id: faker.datatype.uuid(),
+  };
+}
+
+// Generator that yields new random documents
+async function * docGenerator () {
+  for (let i = 0; i < NUM_DOCUMENTS; i++) {
+    yield getRandomDocument();
+  }
+}
+
+(async function run () {
+  const client = new Client({ node: ES_HOST });
+  const result = await client.helpers.bulk({
+    // The bulk API accepts a generator as input.
+    datasource: docGenerator(),
+    onDocument (doc) {
+      numInserted++;
+      process.stdout.clearLine();
+      process.stdout.cursorTo(0);
+      process.stdout.write(`${ numInserted } / ${ NUM_DOCUMENTS } documents inserted`);
+      return {
+        // Creates a new document in the index
+        create: { _index: INDEX },
+      };
+    },
+  })
+})();
+```
+
+Running the script again only takes a few seconds. (Before, it could take a few minutes, depending on how many documents were being inserted.)
+
 ## Evaluating Response Time
 With 25k documents, queries are speedy at around 10ms. I noticed a problem though when trying to query for the last page:
 ```json
