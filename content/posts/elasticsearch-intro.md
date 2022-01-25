@@ -227,7 +227,7 @@ curl -X GET 'localhost:9200/assets/_search?pretty' \
   }'
 ```
 
-This works fine, but takes a while. There is a more optimal solution for bulk insert: make use the [Elasticsearch bulk helper](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/client-helpers.html#bulk-helper). I can use the javascript Elasticsearch client `@elastic/elasticsearch`.
+This works fine, but takes a while. There is a more optimal solution for bulk insert: make use of the [Elasticsearch bulk helper](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/client-helpers.html#bulk-helper). I can use the javascript Elasticsearch client `@elastic/elasticsearch`.
 
 ```bash
 npm i -S  @elastic/elasticsearch
