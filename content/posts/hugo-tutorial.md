@@ -3,6 +3,7 @@ author: Taylor Deckard
 title: Meta Post (Create a Blog with Hugo)
 date: 2021-01-19
 description: Setting up a blog with Hugo
+tags: ["programming", "golang"]
 ---
 
 As an introductory post, I'll detail the steps to create a blog like this.

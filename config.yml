@@ -13,6 +13,20 @@ minify:
   disableXML: true
   minifyOutput: true
 
+markup:
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: true
+    lineNumbersInTable: true
+    noClasses: false
+    style: vim
+    tabWidth: 2
+
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: Blog
@@ -39,9 +53,9 @@ params:
   showtoc: false
   tocopen: false
 
-  # assets:
+  assets:
     # disableHLJS: true # to disable highlight.js
-    # disableFingerprinting: true
+    disableFingerprinting: true
     # favicon: "<link / abs url>"
     # favicon16x16: "<link / abs url>"
     # favicon32x32: "<link / abs url>"
@@ -124,6 +138,10 @@ menu:
     - identifier: search
       name: Search
       url: /search
+      weight: 30
+    - identifier: tags
+      name: Tags
+      url: /tags
       weight: 30
     - identifier: taylordeckard
       name: taylordeckard.me

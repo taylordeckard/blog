@@ -3,6 +3,7 @@ author: Taylor Deckard
 title: Elasticsearch Intro
 date: 2021-01-21
 description: Getting started with Elasticsearch
+tags: ["programming", "database", "node.js"]
 ---
 
 I've started working on a proof-of-concept to improve query performance of a large dataset (5M+ rows.) The data is currently stored in a MySQL database.
