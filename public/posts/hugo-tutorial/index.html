@@ -4,12 +4,12 @@
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
 <title>Meta Post (Create a Blog with Hugo) | Taylor's Blog</title>
-<meta name=keywords content>
+<meta name=keywords content="programming,golang">
 <meta name=description content="Setting up a blog with Hugo">
 <meta name=author content="Taylor Deckard">
 <link rel=canonical href=https://www.taylordeckard.me/blog/posts/hugo-tutorial/>
-<link crossorigin=anonymous href=/blog/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/blog/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link crossorigin=anonymous href=/blog/assets/css/stylesheet.min.css rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/blog/assets/js/highlight.min.js onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://www.taylordeckard.me/blog/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://www.taylordeckard.me/blog/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://www.taylordeckard.me/blog/favicon-32x32.png>
@@ -31,7 +31,7 @@
 <meta name=twitter:title content="Meta Post (Create a Blog with Hugo)">
 <meta name=twitter:description content="Setting up a blog with Hugo">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":2,"name":"Posts","item":"https://www.taylordeckard.me/blog/posts/"},{"@type":"ListItem","position":3,"name":"Meta Post (Create a Blog with Hugo)","item":"https://www.taylordeckard.me/blog/posts/hugo-tutorial/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Meta Post (Create a Blog with Hugo)","name":"Meta Post (Create a Blog with Hugo)","description":"Setting up a blog with Hugo","keywords":[],"articleBody":"As an introductory post, I’ll detail the steps to create a blog like this. It should only take a few minutes…\nInstall Hugo Follow the steps here to install Hugo on your system. For me, on macOS, the command was:\nbrew install hugo Create a Site Next, you’ll want to use the hugo binary to create the project scaffolding for your site. Open up a terminal and enter the following command (substitute my_blog with the name of the directory you want to create the site in):\nhugo new site my_blog -f yml Then cd into the directory:\ncd my_blog At this point, you’ll want to pick a theme. I chose PaperMod. Instructions for adding a theme to your project can usually be found on the theme’s GitHub page. In my case, the install consisted of:\ngit clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth=1 Also as part of the theme install, a line was added to config.yml:\ntheme: \"PaperMod\" At this point, your project should look something like this:\n. ├── archetypes │ └── default.md ├── config.yml ├── content ├── data ├── layouts ├── resources │ └── _gen ├── static └── themes └── PaperMod Configuring the Theme Usually detailed on the theme’s GitHub page, there are a variety of configuration options available. These can be set in config.yml. I copied the PaperMod example configuration and made a few adjustments.\nbaseURL: https://www.taylordeckard.me/ languageCode: en-us title: Taylor's Blog theme: \"PaperMod\" baseURL: https://www.taylordeckard.me/blog enableRobotsTXT: true buildDrafts: false buildFuture: false buildExpired: false minify: disableXML: true minifyOutput: true params: env: production title: Taylor's Blog description: \"Things that happen to me\" keywords: [Blog] author: taylordeckard DateFormat: \"January 2, 2006\" defaultTheme: auto # dark, light disableThemeToggle: false ShowReadingTime: true ShowShareButtons: false ShowPostNavLinks: true ShowBreadCrumbs: true ShowCodeCopyButtons: true disableSpecial1stPost: false disableScrollToTop: false comments: false hidemeta: false hideSummary: false hideFooter: true showtoc: false tocopen: false label: text: \"Home\" # home-info mode homeInfoParams: Title: \"Hi\" Content: Welcome to my blog socialIcons: - name: github url: \"https://github.com/taylordeckard\" cover: hidden: true # hide everywhere but not in structured data hiddenInList: true # hide on list pages and home hiddenInSingle: true # hide on single page editPost: URL: \"https://github.com/taylordeckard/blog/content\" Text: \"Suggest Changes\" # edit text appendFilePath: true # to append file path to Edit link # for search # https://fusejs.io/api/options.html fuseOpts: isCaseSensitive: false shouldSort: true location: 0 distance: 1000 threshold: 0.4 minMatchCharLength: 0 keys: [\"title\", \"permalink\", \"summary\", \"content\"] menu: main: - identifier: archives name: Archives url: /archives weight: 30 - identifier: search name: Search url: /search weight: 30 - identifier: taylordeckard name: taylordeckard.me url: https://taylordeckard.me weight: 30 outputs: home: - HTML - RSS - JSON Creating Content All of the markdown files you will create for your blog will go in the top-level /content directory. Right now it should be empty. There are a couple of files that are specific to the PaperMod theme and need to be created:\ncontent/archives.md\n--- title: \"Archive\" layout: \"archives\" summary: \"archives\" --- content/search.md\n--- title: \"Search\" layout: \"search\" --- Next, create a directory for all of your posts: content/posts. In this directory, you will have a markdown file for each post you make.\nFor my blog, for instance, I created hugo-tutorial.md:\ncontent ├── archives.md ├── posts │ └── hugo-tutorial.md └── search.md hugo-tutorial.md looks something like this:\n--- author: Taylor Deckard title: Meta date: 2021-01-19 description: Setting up a blog with Hugo --- As an introductory post, I'll detail the steps to create a blog like this. It should only take a few minutes... ![It should only take a few minutes...](/blog/images/hugo-tutorial/dumb_and_dumber_watch.webp) ## Install Hugo ... Running Locally Once you have something similar, you should be able to run the blog locally. From the project root directory, run the following:\nhugo serve Then open a browser and navigate to [http://localhost:1313/blog]. (The /blog comes from the baseURL property set in the config.yml)\nNext steps This is a good start to a blog, but I still need to create a GitHub repo for it and configure a pipeline to deploy the blog automatically to my personal website. If you’d rather, you could use GitHub Pages to host your blog for free.\n","wordCount":"676","inLanguage":"en","datePublished":"2021-01-19T00:00:00Z","dateModified":"2021-01-19T00:00:00Z","author":{"@type":"Person","name":"Taylor Deckard"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.taylordeckard.me/blog/posts/hugo-tutorial/"},"publisher":{"@type":"Organization","name":"Taylor's Blog","logo":{"@type":"ImageObject","url":"https://www.taylordeckard.me/blog/favicon.ico"}}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Meta Post (Create a Blog with Hugo)","name":"Meta Post (Create a Blog with Hugo)","description":"Setting up a blog with Hugo","keywords":["programming","golang"],"articleBody":"As an introductory post, I’ll detail the steps to create a blog like this. It should only take a few minutes…\nInstall Hugo Follow the steps here to install Hugo on your system. For me, on macOS, the command was:\n1  brew install hugo   Create a Site Next, you’ll want to use the hugo binary to create the project scaffolding for your site. Open up a terminal and enter the following command (substitute my_blog with the name of the directory you want to create the site in):\n1  hugo new site my_blog -f yml   Then cd into the directory:\n1  cd my_blog   At this point, you’ll want to pick a theme. I chose PaperMod. Instructions for adding a theme to your project can usually be found on the theme’s GitHub page. In my case, the install consisted of:\n1  git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth=1   Also as part of the theme install, a line was added to config.yml:\n1  theme:\"PaperMod\"  At this point, your project should look something like this:\n. ├── archetypes │ └── default.md ├── config.yml ├── content ├── data ├── layouts ├── resources │ └── _gen ├── static └── themes └── PaperMod Configuring the Theme Usually detailed on the theme’s GitHub page, there are a variety of configuration options available. These can be set in config.yml. I copied the PaperMod example configuration and made a few adjustments.\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90  baseURL:https://www.taylordeckard.me/languageCode:en-ustitle:Taylor's Blogtheme:\"PaperMod\"baseURL:https://www.taylordeckard.me/blogenableRobotsTXT:truebuildDrafts:falsebuildFuture:falsebuildExpired:falseminify:disableXML:trueminifyOutput:trueparams:env:productiontitle:Taylor's Blogdescription:\"Things that happen to me\"keywords:[Blog]author:taylordeckardDateFormat:\"January 2, 2006\"defaultTheme:auto# dark, lightdisableThemeToggle:falseShowReadingTime:trueShowShareButtons:falseShowPostNavLinks:trueShowBreadCrumbs:trueShowCodeCopyButtons:truedisableSpecial1stPost:falsedisableScrollToTop:falsecomments:falsehidemeta:falsehideSummary:falsehideFooter:trueshowtoc:falsetocopen:falselabel:text:\"Home\"# home-info modehomeInfoParams:Title:\"Hi\"Content:Welcome to my blogsocialIcons:- name:githuburl:\"https://github.com/taylordeckard\"cover:hidden:true# hide everywhere but not in structured datahiddenInList:true# hide on list pages and homehiddenInSingle:true# hide on single pageeditPost:URL:\"https://github.com/taylordeckard/blog/content\"Text:\"Suggest Changes\"# edit textappendFilePath:true# to append file path to Edit link# for search# https://fusejs.io/api/options.htmlfuseOpts:isCaseSensitive:falseshouldSort:truelocation:0distance:1000threshold:0.4minMatchCharLength:0keys:[\"title\",\"permalink\",\"summary\",\"content\"]menu:main:- identifier:archivesname:Archivesurl:/archivesweight:30- identifier:searchname:Searchurl:/searchweight:30- identifier:taylordeckardname:taylordeckard.meurl:https://taylordeckard.meweight:30outputs:home:- HTML- RSS- JSON  Creating Content All of the markdown files you will create for your blog will go in the top-level /content directory. Right now it should be empty. There are a couple of files that are specific to the PaperMod theme and need to be created:\ncontent/archives.md\n1 2 3 4 5  --- title: \"Archive\" layout: \"archives\" summary: \"archives\" ---   content/search.md\n1 2 3 4  --- title: \"Search\" layout: \"search\" ---   Next, create a directory for all of your posts: content/posts. In this directory, you will have a markdown file for each post you make.\nFor my blog, for instance, I created hugo-tutorial.md:\ncontent ├── archives.md ├── posts │ └── hugo-tutorial.md └── search.md hugo-tutorial.md looks something like this:\n1 2 3 4 5 6 7 8 9 10 11 12 13 14  --- author: Taylor Deckard title: Meta date: 2021-01-19 description: Setting up a blog with Hugo --- As an introductory post, I'll detail the steps to create a blog like this. It should only take a few minutes... ![It should only take a few minutes...](/blog/images/hugo-tutorial/dumb_and_dumber_watch.webp) ## Install Hugo ...   Running Locally Once you have something similar, you should be able to run the blog locally. From the project root directory, run the following:\n1  hugo serve   Then open a browser and navigate to [http://localhost:1313/blog]. (The /blog comes from the baseURL property set in the config.yml)\nNext steps This is a good start to a blog, but I still need to create a GitHub repo for it and configure a pipeline to deploy the blog automatically to my personal website. If you’d rather, you could use GitHub Pages to host your blog for free.\n","wordCount":"644","inLanguage":"en","datePublished":"2021-01-19T00:00:00Z","dateModified":"2021-01-19T00:00:00Z","author":{"@type":"Person","name":"Taylor Deckard"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.taylordeckard.me/blog/posts/hugo-tutorial/"},"publisher":{"@type":"Organization","name":"Taylor's Blog","logo":{"@type":"ImageObject","url":"https://www.taylordeckard.me/blog/favicon.ico"}}}</script>
 </head>
 <body id=top>
 <script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
@@ -53,6 +53,11 @@
 <li>
 <a href=https://www.taylordeckard.me/blog/search title="Search (Alt + /)" accesskey=/>
 <span>Search</span>
+</a>
+</li>
+<li>
+<a href=https://www.taylordeckard.me/blog/tags title=Tags>
+<span>Tags</span>
 </a>
 </li>
 <li>
@@ -82,17 +87,52 @@ It should only take a few minutes&mldr;</p>
 </p>
 <h2 id=install-hugo>Install Hugo<a hidden class=anchor aria-hidden=true href=#install-hugo>#</a></h2>
 <p>Follow the steps <a href=https://gohugo.io/getting-started/installing/>here</a> to install Hugo on your system. For me, on macOS, the command was:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>brew install hugo
-</code></pre></div><h2 id=create-a-site>Create a Site<a hidden class=anchor aria-hidden=true href=#create-a-site>#</a></h2>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>brew install hugo
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=create-a-site>Create a Site<a hidden class=anchor aria-hidden=true href=#create-a-site>#</a></h2>
 <p>Next, you&rsquo;ll want to use the hugo binary to create the project scaffolding for your site. Open up a terminal and enter the following command (substitute <code>my_blog</code> with the name of the directory you want to create the site in):</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>hugo new site my_blog -f yml
-</code></pre></div><p>Then <code>cd</code> into the directory:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>cd my_blog
-</code></pre></div><p>At this point, you&rsquo;ll want to <a href=https://themes.gohugo.io/>pick a theme</a>. I chose <a href=https://github.com/adityatelange/hugo-PaperMod>PaperMod</a>. Instructions for adding a theme to your project can usually be found on the theme&rsquo;s GitHub page. In my case, the install consisted of:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>
-</code></pre></div><p>Also as part of the theme install, a line was added to config.yml:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>theme</span>: <span style=color:#e6db74>&#34;PaperMod&#34;</span>
-</code></pre></div><p>At this point, your project should look something like this:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>hugo new site my_blog -f yml
+</code></pre></td></tr></table>
+</div>
+</div><p>Then <code>cd</code> into the directory:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nb>cd</span> my_blog
+</code></pre></td></tr></table>
+</div>
+</div><p>At this point, you&rsquo;ll want to <a href=https://themes.gohugo.io/>pick a theme</a>. I chose <a href=https://github.com/adityatelange/hugo-PaperMod>PaperMod</a>. Instructions for adding a theme to your project can usually be found on the theme&rsquo;s GitHub page. In my case, the install consisted of:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth<span class=o>=</span><span class=m>1</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Also as part of the theme install, a line was added to config.yml:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>theme</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;PaperMod&#34;</span><span class=w>
+</span></code></pre></td></tr></table>
+</div>
+</div><p>At this point, your project should look something like this:</p>
 <pre tabindex=0><code>.
 ├── archetypes
 │   └── default.md
@@ -107,110 +147,227 @@ It should only take a few minutes&mldr;</p>
     └── PaperMod
 </code></pre><h2 id=configuring-the-theme>Configuring the Theme<a hidden class=anchor aria-hidden=true href=#configuring-the-theme>#</a></h2>
 <p>Usually detailed on the theme&rsquo;s GitHub page, there are a variety of configuration options available. These can be set in <code>config.yml</code>. I copied the PaperMod example configuration and made a few adjustments.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#f92672>baseURL</span>: <span style=color:#ae81ff>https://www.taylordeckard.me/</span>
-<span style=color:#f92672>languageCode</span>: <span style=color:#ae81ff>en-us</span>
-<span style=color:#f92672>title</span>: <span style=color:#ae81ff>Taylor&#39;s Blog</span>
-<span style=color:#f92672>theme</span>: <span style=color:#e6db74>&#34;PaperMod&#34;</span>
-
-<span style=color:#f92672>baseURL</span>: <span style=color:#ae81ff>https://www.taylordeckard.me/blog</span>
-<span style=color:#f92672>enableRobotsTXT</span>: <span style=color:#66d9ef>true</span>
-<span style=color:#f92672>buildDrafts</span>: <span style=color:#66d9ef>false</span>
-<span style=color:#f92672>buildFuture</span>: <span style=color:#66d9ef>false</span>
-<span style=color:#f92672>buildExpired</span>: <span style=color:#66d9ef>false</span>
-
-<span style=color:#f92672>minify</span>:
-  <span style=color:#f92672>disableXML</span>: <span style=color:#66d9ef>true</span>
-  <span style=color:#f92672>minifyOutput</span>: <span style=color:#66d9ef>true</span>
-
-<span style=color:#f92672>params</span>:
-  <span style=color:#f92672>env</span>: <span style=color:#ae81ff>production</span>
-  <span style=color:#f92672>title</span>: <span style=color:#ae81ff>Taylor&#39;s Blog</span>
-  <span style=color:#f92672>description</span>: <span style=color:#e6db74>&#34;Things that happen to me&#34;</span>
-  <span style=color:#f92672>keywords</span>: [<span style=color:#ae81ff>Blog]</span>
-  <span style=color:#f92672>author</span>: <span style=color:#ae81ff>taylordeckard</span>
-  <span style=color:#f92672>DateFormat</span>: <span style=color:#e6db74>&#34;January 2, 2006&#34;</span>
-  <span style=color:#f92672>defaultTheme</span>: <span style=color:#ae81ff>auto</span> <span style=color:#75715e># dark, light</span>
-  <span style=color:#f92672>disableThemeToggle</span>: <span style=color:#66d9ef>false</span>
-
-  <span style=color:#f92672>ShowReadingTime</span>: <span style=color:#66d9ef>true</span>
-  <span style=color:#f92672>ShowShareButtons</span>: <span style=color:#66d9ef>false</span>
-  <span style=color:#f92672>ShowPostNavLinks</span>: <span style=color:#66d9ef>true</span>
-  <span style=color:#f92672>ShowBreadCrumbs</span>: <span style=color:#66d9ef>true</span>
-  <span style=color:#f92672>ShowCodeCopyButtons</span>: <span style=color:#66d9ef>true</span>
-  <span style=color:#f92672>disableSpecial1stPost</span>: <span style=color:#66d9ef>false</span>
-  <span style=color:#f92672>disableScrollToTop</span>: <span style=color:#66d9ef>false</span>
-  <span style=color:#f92672>comments</span>: <span style=color:#66d9ef>false</span>
-  <span style=color:#f92672>hidemeta</span>: <span style=color:#66d9ef>false</span>
-  <span style=color:#f92672>hideSummary</span>: <span style=color:#66d9ef>false</span>
-  <span style=color:#f92672>hideFooter</span>: <span style=color:#66d9ef>true</span>
-  <span style=color:#f92672>showtoc</span>: <span style=color:#66d9ef>false</span>
-  <span style=color:#f92672>tocopen</span>: <span style=color:#66d9ef>false</span>
-
-  <span style=color:#f92672>label</span>:
-    <span style=color:#f92672>text</span>: <span style=color:#e6db74>&#34;Home&#34;</span>
-
-  <span style=color:#75715e># home-info mode</span>
-  <span style=color:#f92672>homeInfoParams</span>:
-    <span style=color:#f92672>Title</span>: <span style=color:#e6db74>&#34;Hi&#34;</span>
-    <span style=color:#f92672>Content</span>: <span style=color:#ae81ff>Welcome to my blog</span>
-
-  <span style=color:#f92672>socialIcons</span>:
-    - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>github</span>
-      <span style=color:#f92672>url</span>: <span style=color:#e6db74>&#34;https://github.com/taylordeckard&#34;</span>
-
-  <span style=color:#f92672>cover</span>:
-    <span style=color:#f92672>hidden</span>: <span style=color:#66d9ef>true</span> <span style=color:#75715e># hide everywhere but not in structured data</span>
-    <span style=color:#f92672>hiddenInList</span>: <span style=color:#66d9ef>true</span> <span style=color:#75715e># hide on list pages and home</span>
-    <span style=color:#f92672>hiddenInSingle</span>: <span style=color:#66d9ef>true</span> <span style=color:#75715e># hide on single page</span>
-
-  <span style=color:#f92672>editPost</span>:
-    <span style=color:#f92672>URL</span>: <span style=color:#e6db74>&#34;https://github.com/taylordeckard/blog/content&#34;</span>
-    <span style=color:#f92672>Text</span>: <span style=color:#e6db74>&#34;Suggest Changes&#34;</span> <span style=color:#75715e># edit text</span>
-    <span style=color:#f92672>appendFilePath</span>: <span style=color:#66d9ef>true</span> <span style=color:#75715e># to append file path to Edit link</span>
-
-  <span style=color:#75715e># for search</span>
-  <span style=color:#75715e># https://fusejs.io/api/options.html</span>
-  <span style=color:#f92672>fuseOpts</span>:
-    <span style=color:#f92672>isCaseSensitive</span>: <span style=color:#66d9ef>false</span>
-    <span style=color:#f92672>shouldSort</span>: <span style=color:#66d9ef>true</span>
-    <span style=color:#f92672>location</span>: <span style=color:#ae81ff>0</span>
-    <span style=color:#f92672>distance</span>: <span style=color:#ae81ff>1000</span>
-    <span style=color:#f92672>threshold</span>: <span style=color:#ae81ff>0.4</span>
-    <span style=color:#f92672>minMatchCharLength</span>: <span style=color:#ae81ff>0</span>
-    <span style=color:#f92672>keys</span>: [<span style=color:#e6db74>&#34;title&#34;</span>, <span style=color:#e6db74>&#34;permalink&#34;</span>, <span style=color:#e6db74>&#34;summary&#34;</span>, <span style=color:#e6db74>&#34;content&#34;</span>]
-<span style=color:#f92672>menu</span>:
-  <span style=color:#f92672>main</span>:
-    - <span style=color:#f92672>identifier</span>: <span style=color:#ae81ff>archives</span>
-      <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Archives</span>
-      <span style=color:#f92672>url</span>: <span style=color:#ae81ff>/archives</span>
-      <span style=color:#f92672>weight</span>: <span style=color:#ae81ff>30</span>
-    - <span style=color:#f92672>identifier</span>: <span style=color:#ae81ff>search</span>
-      <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Search</span>
-      <span style=color:#f92672>url</span>: <span style=color:#ae81ff>/search</span>
-      <span style=color:#f92672>weight</span>: <span style=color:#ae81ff>30</span>
-    - <span style=color:#f92672>identifier</span>: <span style=color:#ae81ff>taylordeckard</span>
-      <span style=color:#f92672>name</span>: <span style=color:#ae81ff>taylordeckard.me</span>
-      <span style=color:#f92672>url</span>: <span style=color:#ae81ff>https://taylordeckard.me</span>
-      <span style=color:#f92672>weight</span>: <span style=color:#ae81ff>30</span>
-<span style=color:#f92672>outputs</span>:
-  <span style=color:#f92672>home</span>:
-    - <span style=color:#ae81ff>HTML</span>
-    - <span style=color:#ae81ff>RSS</span>
-    - <span style=color:#ae81ff>JSON</span>
-</code></pre></div><h2 id=creating-content>Creating Content<a hidden class=anchor aria-hidden=true href=#creating-content>#</a></h2>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span><span class=lnt>73
+</span><span class=lnt>74
+</span><span class=lnt>75
+</span><span class=lnt>76
+</span><span class=lnt>77
+</span><span class=lnt>78
+</span><span class=lnt>79
+</span><span class=lnt>80
+</span><span class=lnt>81
+</span><span class=lnt>82
+</span><span class=lnt>83
+</span><span class=lnt>84
+</span><span class=lnt>85
+</span><span class=lnt>86
+</span><span class=lnt>87
+</span><span class=lnt>88
+</span><span class=lnt>89
+</span><span class=lnt>90
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>baseURL</span><span class=p>:</span><span class=w> </span><span class=l>https://www.taylordeckard.me/</span><span class=w>
+</span><span class=w></span><span class=nt>languageCode</span><span class=p>:</span><span class=w> </span><span class=l>en-us</span><span class=w>
+</span><span class=w></span><span class=nt>title</span><span class=p>:</span><span class=w> </span><span class=l>Taylor&#39;s Blog</span><span class=w>
+</span><span class=w></span><span class=nt>theme</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;PaperMod&#34;</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=nt>baseURL</span><span class=p>:</span><span class=w> </span><span class=l>https://www.taylordeckard.me/blog</span><span class=w>
+</span><span class=w></span><span class=nt>enableRobotsTXT</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w></span><span class=nt>buildDrafts</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span><span class=w></span><span class=nt>buildFuture</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span><span class=w></span><span class=nt>buildExpired</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=nt>minify</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=nt>disableXML</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>  </span><span class=nt>minifyOutput</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>
+</span><span class=w></span><span class=nt>params</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=nt>env</span><span class=p>:</span><span class=w> </span><span class=l>production</span><span class=w>
+</span><span class=w>  </span><span class=nt>title</span><span class=p>:</span><span class=w> </span><span class=l>Taylor&#39;s Blog</span><span class=w>
+</span><span class=w>  </span><span class=nt>description</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;Things that happen to me&#34;</span><span class=w>
+</span><span class=w>  </span><span class=nt>keywords</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=l>Blog]</span><span class=w>
+</span><span class=w>  </span><span class=nt>author</span><span class=p>:</span><span class=w> </span><span class=l>taylordeckard</span><span class=w>
+</span><span class=w>  </span><span class=nt>DateFormat</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;January 2, 2006&#34;</span><span class=w>
+</span><span class=w>  </span><span class=nt>defaultTheme</span><span class=p>:</span><span class=w> </span><span class=l>auto</span><span class=w> </span><span class=c># dark, light</span><span class=w>
+</span><span class=w>  </span><span class=nt>disableThemeToggle</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span><span class=w>
+</span><span class=w>  </span><span class=nt>ShowReadingTime</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>  </span><span class=nt>ShowShareButtons</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span><span class=w>  </span><span class=nt>ShowPostNavLinks</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>  </span><span class=nt>ShowBreadCrumbs</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>  </span><span class=nt>ShowCodeCopyButtons</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>  </span><span class=nt>disableSpecial1stPost</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span><span class=w>  </span><span class=nt>disableScrollToTop</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span><span class=w>  </span><span class=nt>comments</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span><span class=w>  </span><span class=nt>hidemeta</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span><span class=w>  </span><span class=nt>hideSummary</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span><span class=w>  </span><span class=nt>hideFooter</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>  </span><span class=nt>showtoc</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span><span class=w>  </span><span class=nt>tocopen</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span><span class=w>
+</span><span class=w>  </span><span class=nt>label</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>text</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;Home&#34;</span><span class=w>
+</span><span class=w>
+</span><span class=w>  </span><span class=c># home-info mode</span><span class=w>
+</span><span class=w>  </span><span class=nt>homeInfoParams</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>Title</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;Hi&#34;</span><span class=w>
+</span><span class=w>    </span><span class=nt>Content</span><span class=p>:</span><span class=w> </span><span class=l>Welcome to my blog</span><span class=w>
+</span><span class=w>
+</span><span class=w>  </span><span class=nt>socialIcons</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span>- <span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>github</span><span class=w>
+</span><span class=w>      </span><span class=nt>url</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;https://github.com/taylordeckard&#34;</span><span class=w>
+</span><span class=w>
+</span><span class=w>  </span><span class=nt>cover</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>hidden</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w> </span><span class=c># hide everywhere but not in structured data</span><span class=w>
+</span><span class=w>    </span><span class=nt>hiddenInList</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w> </span><span class=c># hide on list pages and home</span><span class=w>
+</span><span class=w>    </span><span class=nt>hiddenInSingle</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w> </span><span class=c># hide on single page</span><span class=w>
+</span><span class=w>
+</span><span class=w>  </span><span class=nt>editPost</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>URL</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;https://github.com/taylordeckard/blog/content&#34;</span><span class=w>
+</span><span class=w>    </span><span class=nt>Text</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;Suggest Changes&#34;</span><span class=w> </span><span class=c># edit text</span><span class=w>
+</span><span class=w>    </span><span class=nt>appendFilePath</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w> </span><span class=c># to append file path to Edit link</span><span class=w>
+</span><span class=w>
+</span><span class=w>  </span><span class=c># for search</span><span class=w>
+</span><span class=w>  </span><span class=c># https://fusejs.io/api/options.html</span><span class=w>
+</span><span class=w>  </span><span class=nt>fuseOpts</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>isCaseSensitive</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
+</span><span class=w>    </span><span class=nt>shouldSort</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span><span class=w>    </span><span class=nt>location</span><span class=p>:</span><span class=w> </span><span class=m>0</span><span class=w>
+</span><span class=w>    </span><span class=nt>distance</span><span class=p>:</span><span class=w> </span><span class=m>1000</span><span class=w>
+</span><span class=w>    </span><span class=nt>threshold</span><span class=p>:</span><span class=w> </span><span class=m>0.4</span><span class=w>
+</span><span class=w>    </span><span class=nt>minMatchCharLength</span><span class=p>:</span><span class=w> </span><span class=m>0</span><span class=w>
+</span><span class=w>    </span><span class=nt>keys</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=s2>&#34;title&#34;</span><span class=p>,</span><span class=w> </span><span class=s2>&#34;permalink&#34;</span><span class=p>,</span><span class=w> </span><span class=s2>&#34;summary&#34;</span><span class=p>,</span><span class=w> </span><span class=s2>&#34;content&#34;</span><span class=p>]</span><span class=w>
+</span><span class=w></span><span class=nt>menu</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=nt>main</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span>- <span class=nt>identifier</span><span class=p>:</span><span class=w> </span><span class=l>archives</span><span class=w>
+</span><span class=w>      </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Archives</span><span class=w>
+</span><span class=w>      </span><span class=nt>url</span><span class=p>:</span><span class=w> </span><span class=l>/archives</span><span class=w>
+</span><span class=w>      </span><span class=nt>weight</span><span class=p>:</span><span class=w> </span><span class=m>30</span><span class=w>
+</span><span class=w>    </span>- <span class=nt>identifier</span><span class=p>:</span><span class=w> </span><span class=l>search</span><span class=w>
+</span><span class=w>      </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Search</span><span class=w>
+</span><span class=w>      </span><span class=nt>url</span><span class=p>:</span><span class=w> </span><span class=l>/search</span><span class=w>
+</span><span class=w>      </span><span class=nt>weight</span><span class=p>:</span><span class=w> </span><span class=m>30</span><span class=w>
+</span><span class=w>    </span>- <span class=nt>identifier</span><span class=p>:</span><span class=w> </span><span class=l>taylordeckard</span><span class=w>
+</span><span class=w>      </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>taylordeckard.me</span><span class=w>
+</span><span class=w>      </span><span class=nt>url</span><span class=p>:</span><span class=w> </span><span class=l>https://taylordeckard.me</span><span class=w>
+</span><span class=w>      </span><span class=nt>weight</span><span class=p>:</span><span class=w> </span><span class=m>30</span><span class=w>
+</span><span class=w></span><span class=nt>outputs</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=nt>home</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span>- <span class=l>HTML</span><span class=w>
+</span><span class=w>    </span>- <span class=l>RSS</span><span class=w>
+</span><span class=w>    </span>- <span class=l>JSON</span><span class=w>
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id=creating-content>Creating Content<a hidden class=anchor aria-hidden=true href=#creating-content>#</a></h2>
 <p>All of the markdown files you will create for your blog will go in the top-level <code>/content</code> directory. Right now it should be empty. There are a couple of files that are specific to the PaperMod theme and need to be created:</p>
 <p><code>content/archives.md</code></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-md data-lang=md>---
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-md data-lang=md>---
 title: &#34;Archive&#34;
 layout: &#34;archives&#34;
 summary: &#34;archives&#34;
 ---
-</code></pre></div><p><code>content/search.md</code></p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-md data-lang=md>---
+</code></pre></td></tr></table>
+</div>
+</div><p><code>content/search.md</code></p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-md data-lang=md>---
 title: &#34;Search&#34;
 layout: &#34;search&#34;
 ---
-</code></pre></div><p>Next, create a directory for all of your posts: <code>content/posts</code>. In this directory, you will have a markdown file for each post you make.</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>Next, create a directory for all of your posts: <code>content/posts</code>. In this directory, you will have a markdown file for each post you make.</p>
 <p>For my blog, for instance, I created <code>hugo-tutorial.md</code>:</p>
 <pre tabindex=0><code>content
 ├── archives.md
@@ -218,7 +375,25 @@ layout: &#34;search&#34;
 │   └── hugo-tutorial.md
 └── search.md
 </code></pre><p><code>hugo-tutorial.md</code> looks something like this:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-md data-lang=md>---
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-md data-lang=md>---
 author: Taylor Deckard
 title: Meta
 date: 2021-01-19
@@ -228,18 +403,31 @@ description: Setting up a blog with Hugo
 As an introductory post, I&#39;ll detail the steps to create a blog like this.
 It should only take a few minutes...
 
-![<span style=color:#f92672>It should only take a few minutes...</span>](<span style=color:#a6e22e>/blog/images/hugo-tutorial/dumb_and_dumber_watch.webp</span>)
+![<span class=nt>It should only take a few minutes...</span>](<span class=na>/blog/images/hugo-tutorial/dumb_and_dumber_watch.webp</span>)
 
-<span style=color:#75715e>## Install Hugo
-</span><span style=color:#75715e></span>...
-</code></pre></div><h2 id=running-locally>Running Locally<a hidden class=anchor aria-hidden=true href=#running-locally>#</a></h2>
+<span class=gu>## Install Hugo
+</span><span class=gu></span>...
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=running-locally>Running Locally<a hidden class=anchor aria-hidden=true href=#running-locally>#</a></h2>
 <p>Once you have something similar, you should be able to run the blog locally. From the project root directory, run the following:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>hugo serve
-</code></pre></div><p>Then open a browser and navigate to [http://localhost:1313/blog]. (The <strong>/blog</strong> comes from the <em>baseURL</em> property set in the <code>config.yml</code>)</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>hugo serve
+</code></pre></td></tr></table>
+</div>
+</div><p>Then open a browser and navigate to [http://localhost:1313/blog]. (The <strong>/blog</strong> comes from the <em>baseURL</em> property set in the <code>config.yml</code>)</p>
 <h2 id=next-steps>Next steps<a hidden class=anchor aria-hidden=true href=#next-steps>#</a></h2>
 <p>This is a good start to a blog, but I still need to create a GitHub repo for it and configure a pipeline to deploy the blog automatically to my personal website. If you&rsquo;d rather, you could use <a href=https://pages.github.com/>GitHub Pages</a> to host your blog for free.</p>
 </div>
 <footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://www.taylordeckard.me/blog/tags/programming/>programming</a></li>
+<li><a href=https://www.taylordeckard.me/blog/tags/golang/>golang</a></li>
+</ul>
 <nav class=paginav>
 <a class=prev href=https://www.taylordeckard.me/blog/posts/elasticsearch-intro/>
 <span class=title>« Prev Page</span>
