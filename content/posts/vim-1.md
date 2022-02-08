@@ -151,11 +151,11 @@ If at any time you make a bad move, you can go back to your previous position wi
 
 ### Editing Text
 I've mentioned that the `i` key from **Normal** mode switches to **Insert** mode in which text is recorded as you type. There are other ways to enter **Insert** mode as well. All of the keys below will enter **Insert** mode and also move the cursor to a new position:
-- `o`: Moves the cursor to the next line.
-- `O`: Moves the cursor to the previous line.
-- `a`: Moves the cursor to the next character.
+- `a`: Moves the cursor one character to the right.
 - `A`: Moves the cursor to the end of the line.
 - `I`: Moves the cursor to the beginning of the line.
+- `o`: Inserts a line below the current line.
+- `O`: Inserts a line above the current line.
 
 Some keys enter **Insert** mode and also delete characters:
 - `c`: Used in combination with a motion will delete characters within the motion. For instance, `cw` will delete the word all text from the cursor to the next word.
