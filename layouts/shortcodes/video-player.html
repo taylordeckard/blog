@@ -1,0 +1,19 @@
+<style>
+.video-container {
+  text-align: center;
+}
+.video-player {
+  width: 600px;
+}
+@media screen and (max-width: 700px) {
+  .video-player {
+    width: 400px;
+  }
+}
+</style>
+<div class="video-container">
+  <video controls autoplay loop class="video-player">
+    <source src="{{ .Get "src" }}" type="video/webm"/>
+    Sorry, your browser doesn't support embedded videos.
+  </video>
+</div>

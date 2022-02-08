@@ -1,7 +1,7 @@
 ---
 author: Taylor Deckard
 title: Meta Post (Create a Blog with Hugo)
-date: 2021-01-19
+date: 2022-01-19
 description: Setting up a blog with Hugo
 tags: ["programming", "golang"]
 ---

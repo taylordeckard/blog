@@ -1,7 +1,7 @@
 ---
 author: Taylor Deckard
 title: Elasticsearch Intro
-date: 2021-01-21
+date: 2022-01-21
 description: Getting started with Elasticsearch
 tags: ["programming", "database", "node.js"]
 ---
