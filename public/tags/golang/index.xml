@@ -6,11 +6,11 @@
     <description>Recent content in golang on Taylor&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://www.taylordeckard.me/blog/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.taylordeckard.me/blog/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Meta Post (Create a Blog with Hugo)</title>
       <link>https://www.taylordeckard.me/blog/posts/hugo-tutorial/</link>
-      <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 19 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.taylordeckard.me/blog/posts/hugo-tutorial/</guid>
       <description>Setting up a blog with Hugo</description>
