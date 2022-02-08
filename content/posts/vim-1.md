@@ -44,7 +44,7 @@ Right: l
 Typing each of these keys individually will move one character for `h` or `l` and one line for `j` or `k`. If you want to move down 20 lines, you don't have to press `j` 20 times. Instead, you can type `20j`. 
 
 With that said, knowing which line to move down to can be difficult if you can't see the line numbers. You can show them with `:set number<Enter>`. To make jumping around even easier, you can `:set relativenumber<Enter>` which will still display the line number of the current line, however all other lines display the number of lines away from the current line. See the example below.
-{{< video-player src="/blog/images/vim-1/vim-line-nos.webm" >}}
+{{< video-player src="/blog/images/vim-1/vim-line-nos.mp4" >}}
 
 I like to have the **relativenumber** setting active every time I open a file. Luckily, there is an easy to make Vim remember all of your settings.
 
@@ -125,7 +125,7 @@ There are many alternative ways to move the cursor around in Vim though...
 
 ### Moving Around (part 2)
 When reading a large file, moving the cursor line by line is not ideal. Instead of using `j`/`k` to move, you can move half the page at a time with `Ctrl-D`/`Ctrl-U`.To go to the last line in the file, simply press `G`. To go back to the first line, press `gg`.
-{{< video-player src="/blog/images/vim-1/vim-movement.webm" >}}
+{{< video-player src="/blog/images/vim-1/vim-movement.mp4" >}}
 
 On a long line, you may want to move forward and backward by word instead of by character. For this, use `w` to move to the next word and `b` to move to the previous. Similarly to moving down 20 lines with `20j`, you can move forward 20 words with `20w`.
 
@@ -143,7 +143,7 @@ set ignorecase
 set smartcase
 ```
 This makes it so searching for a word with all lowercase characters ignores case. However, a search including uppercase letters will be case-sensitive.
-{{< video-player src="/blog/images/vim-1/vim-search.webm" >}}
+{{< video-player src="/blog/images/vim-1/vim-search.mp4" >}}
 
 When the cursor is placed on a character of a pair, like opening and closing brackets, `%` will move the cursor to the opposite character. For example, if you are editing a text file that looks like `{ "an": "object" }` and your cursor is on `{`, pressing `%` will move the cursor to `}`.
 
@@ -188,7 +188,7 @@ Once in visual mode, you can perform actions on the selected text such as:
 - `y`: Yank (copy) the selected text.
 
 Note that the above may not apply to **Visual Block** mode. Here's an example of that:
-{{< video-player src="/blog/images/vim-1/vim-v-block.webm" >}}
+{{< video-player src="/blog/images/vim-1/vim-v-block.mp4" >}}
 The above video shows how to convert a ordered list to an unordered list using **Visual Block** mode. The key sequence is `<Ctrl-v>Gls-<Esc>` Starting with the cursor in the top-left position, `Ctrl-v` enters **Visual Block** mode. Then, `G` moves the cursor to the bottom of the file, creating a selection of the entire first column. `l` moves the cursor to the right one character, expanding the selection to the first two columns. `s` then deletes the selected text and enters
 **Insert** mode. It is important to note that **Insert** mode from **Visual Block** affects all rows that were selected. This means that `-` inserts the dash and `Esc` exits **Insert** mode while inserting the "-" on all lines that were selected in the **Visual Block**.
 
@@ -210,7 +210,7 @@ You can also yank and paste to a specified register. Select some text and type `
 Macros are a useful feature that also make use of registers. They allow you to record a sequence of key presses and repeat the sequence any number of times.
 
 In the below example, I use a macro to create an ordered list:
-{{< video-player src="/blog/images/vim-1/vim-macro.webm" >}}
+{{< video-player src="/blog/images/vim-1/vim-macro.mp4" >}}
 First, `i1. ` is entered on the first line. Then, `qa` begins recording the macro. Any key pressed at this point will be recorded until `q` is pressed in **Normal** mode. `^` moves the cursor to the begining of the line. `v` enters visual mode and `f ` moves the cursor to the first space character. Then `y` yanks "1. " and moves the cursor back to the beginning of the line. `j` moves the cursor down. `P` pastes the "1. " before the cursor. `^` moves to the beginning of the 2nd line and
 `<Ctrl-a>` increments the number under the cursor by 1. Finally, `q` ends recording of the macro. The macro stored in the `a` register looks like this: `^vf yjP^<c-a>`. 
 
