@@ -6,7 +6,16 @@
     <description>Recent content in programming on Taylor&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.taylordeckard.me/blog/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.taylordeckard.me/blog/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wordle CLI with Node.js and TypeScript</title>
+      <link>https://www.taylordeckard.me/blog/posts/wordle/</link>
+      <pubDate>Fri, 22 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.taylordeckard.me/blog/posts/wordle/</guid>
+      <description>How to build a Wordle CLI with Node.js and TypeScript</description>
+    </item>
+    
     <item>
       <title>Vim Intro</title>
       <link>https://www.taylordeckard.me/blog/posts/vim-1/</link>
