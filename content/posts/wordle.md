@@ -10,7 +10,7 @@ A few months ago, our team was tasked with leading a new hire programming bootca
 
 For the bootcamp, I've broken down the project into various learning exercises. These exercises are assessed by unit test cases and linting jobs that run in Concourse CI. The tasks are fairly basic introductory material and (in my opinion) are less interesting than the overall functionality of the project.
 
-For instance, in order to accurately clone the actual Wordle, I did a bit of reverse-engineering that turned out to be fairly simple. Inspecting the Wordle web page JavaScript source reveals that all of the answers for each day are stored in an array of strings. The answer for the current day is determined by using an index derived from the number of days since the first day of Wordle (May 5, 2021.)
+For instance, in order to accurately clone the actual Wordle, I did a bit of reverse-engineering that turned out to be fairly simple. Inspecting the Wordle web page JavaScript source reveals that all of the answers for each day are stored in an array of strings. The answer for the current day is determined by using an index derived from the number of days since the first day of Wordle (June 19, 2021.)
 
 With this information, I began coding a program that:
 1. Fetches the actual Wordle web page index.html file and parses it to get the JavaScript source file.
@@ -30,7 +30,7 @@ public static parseWordleJavascript(jsFile: string) {
   }
 }
 ```
-3. Finds the number of days since May 5, 2021 and uses that to get the current day's answer.
+3. Finds the number of days since June 19, 2021 and uses that to get the current day's answer.
 {{< codepen hash="mdpgWBK" user="taylordeckard" >}}
 
 From this point, all that is left is to write the CLI and game logic. I chose to use [commander.js](https://github.com/tj/commander.js), which is a nice wrapper for argument parsing and command execution. Basic setup looks like this:
