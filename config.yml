@@ -19,9 +19,8 @@ markup:
     guessSyntax: false
     hl_Lines: ""
     lineAnchors: ""
-    lineNoStart: 1
-    lineNos: true
-    lineNumbersInTable: true
+    lineNos: false
+    lineNumbersInTable: false
     noClasses: false
     style: vim
     tabWidth: 2
