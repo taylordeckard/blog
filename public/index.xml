@@ -6,7 +6,16 @@
     <description>Recent content on Taylor&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.taylordeckard.me/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.taylordeckard.me/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bourbon Search pt. 1: Scraper</title>
+      <link>https://www.taylordeckard.me/blog/posts/bourbon/</link>
+      <pubDate>Sat, 11 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.taylordeckard.me/blog/posts/bourbon/</guid>
+      <description>A series that discusses building a Whiskey Shop Search with Typescript, MongoDB, GraphQL and Next.js</description>
+    </item>
+    
     <item>
       <title>Wordle CLI with Node.js and TypeScript</title>
       <link>https://www.taylordeckard.me/blog/posts/wordle/</link>

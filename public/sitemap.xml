@@ -2,23 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.taylordeckard.me/blog/posts/bourbon/</loc>
+    <lastmod>2023-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.taylordeckard.me/blog/tags/graphql/</loc>
+    <lastmod>2023-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.taylordeckard.me/blog/tags/mongodb/</loc>
+    <lastmod>2023-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.taylordeckard.me/blog/tags/next.js/</loc>
+    <lastmod>2023-03-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.taylordeckard.me/blog/tags/node.js/</loc>
-    <lastmod>2022-04-22T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.taylordeckard.me/blog/posts/</loc>
-    <lastmod>2022-04-22T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.taylordeckard.me/blog/tags/programming/</loc>
-    <lastmod>2022-04-22T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.taylordeckard.me/blog/tags/react/</loc>
+    <lastmod>2023-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.taylordeckard.me/blog/tags/</loc>
-    <lastmod>2022-04-22T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.taylordeckard.me/blog/</loc>
-    <lastmod>2022-04-22T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.taylordeckard.me/blog/tags/typescript/</loc>
-    <lastmod>2022-04-22T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.taylordeckard.me/blog/posts/wordle/</loc>
     <lastmod>2022-04-22T00:00:00+00:00</lastmod>

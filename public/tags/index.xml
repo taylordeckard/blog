@@ -6,11 +6,38 @@
     <description>Recent content in Tags on Taylor&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.taylordeckard.me/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.taylordeckard.me/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>graphql</title>
+      <link>https://www.taylordeckard.me/blog/tags/graphql/</link>
+      <pubDate>Sat, 11 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.taylordeckard.me/blog/tags/graphql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mongodb</title>
+      <link>https://www.taylordeckard.me/blog/tags/mongodb/</link>
+      <pubDate>Sat, 11 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.taylordeckard.me/blog/tags/mongodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>next.js</title>
+      <link>https://www.taylordeckard.me/blog/tags/next.js/</link>
+      <pubDate>Sat, 11 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.taylordeckard.me/blog/tags/next.js/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>node.js</title>
       <link>https://www.taylordeckard.me/blog/tags/node.js/</link>
-      <pubDate>Fri, 22 Apr 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 11 Mar 2023 00:00:00 +0000</pubDate>
       
       <guid>https://www.taylordeckard.me/blog/tags/node.js/</guid>
       <description></description>
@@ -19,16 +46,25 @@
     <item>
       <title>programming</title>
       <link>https://www.taylordeckard.me/blog/tags/programming/</link>
-      <pubDate>Fri, 22 Apr 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 11 Mar 2023 00:00:00 +0000</pubDate>
       
       <guid>https://www.taylordeckard.me/blog/tags/programming/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>react</title>
+      <link>https://www.taylordeckard.me/blog/tags/react/</link>
+      <pubDate>Sat, 11 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.taylordeckard.me/blog/tags/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>typescript</title>
       <link>https://www.taylordeckard.me/blog/tags/typescript/</link>
-      <pubDate>Fri, 22 Apr 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 11 Mar 2023 00:00:00 +0000</pubDate>
       
       <guid>https://www.taylordeckard.me/blog/tags/typescript/</guid>
       <description></description>
