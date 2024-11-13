@@ -6,7 +6,52 @@
     <description>Recent content in Tags on Taylor&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.taylordeckard.me/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.taylordeckard.me/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>distributed systems</title>
+      <link>https://www.taylordeckard.me/blog/tags/distributed-systems/</link>
+      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.taylordeckard.me/blog/tags/distributed-systems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://www.taylordeckard.me/blog/tags/javascript/</link>
+      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.taylordeckard.me/blog/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://www.taylordeckard.me/blog/tags/programming/</link>
+      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.taylordeckard.me/blog/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rust</title>
+      <link>https://www.taylordeckard.me/blog/tags/rust/</link>
+      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.taylordeckard.me/blog/tags/rust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>websockets</title>
+      <link>https://www.taylordeckard.me/blog/tags/websockets/</link>
+      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.taylordeckard.me/blog/tags/websockets/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>graphql</title>
       <link>https://www.taylordeckard.me/blog/tags/graphql/</link>
@@ -40,15 +85,6 @@
       <pubDate>Sat, 11 Mar 2023 00:00:00 +0000</pubDate>
       
       <guid>https://www.taylordeckard.me/blog/tags/node.js/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programming</title>
-      <link>https://www.taylordeckard.me/blog/tags/programming/</link>
-      <pubDate>Sat, 11 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.taylordeckard.me/blog/tags/programming/</guid>
       <description></description>
     </item>
     
