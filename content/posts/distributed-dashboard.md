@@ -27,7 +27,7 @@ sequenceDiagram
 
 This design allows for disparate data to be accessed from a central location. 
 
-If you'd like a preview, I have deployed the code to [my website](https://www.taylordeckard.me/distributed-dashboard). A client IP addressed should be listed. If you click it, the browser will initiate the request detailed in the above diagram. The returned dataset is the last 40 minutes of CPU utilization metrics for the client program host machine.
+If you'd like a preview, I have deployed the code to [my website](https://www.taylordeckard.me/distributed-dashboard). A client IP address and port should be listed. If you click it, the browser will initiate the request detailed in the above diagram. The returned dataset is the last 40 minutes of CPU utilization metrics for the client program host machine.
 
 ## The Hub
 
