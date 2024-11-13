@@ -85,7 +85,7 @@ params:
     Title: "Hi"
     Content: |
       Welcome to my blog.
-      ![Painted Bunting](/blog/images/home/painted_bunting.png)
+      ![Barred Owl](/blog/images/home/barred_owl.jpg)
 
   socialIcons:
     - name: github
