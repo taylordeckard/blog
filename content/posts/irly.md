@@ -61,7 +61,7 @@ message GetFileRequest {
 
 message GetFileResponse {
   string file_path = 1;
-  string file_content = 2;
+  bytes file_content = 2;
 }
 ```
 
@@ -83,8 +83,8 @@ cargo add async-trait
 cargo add prost
 # tokio is needed for async
 cargo add tokio -F full
-# tonic is the gRPC library
-cargo add tonic
+# tonic is the gRPC library with gzip support
+cargo add tonic -F gzip
 # tonic-reflection is needed for reflection
 cargo add tonic-reflection
 # tonic-build is needed to compile the proto
@@ -280,13 +280,16 @@ use std::path::Path;
 
 const PUBLIC_PATH: &'static str = "./public/";
 
-pub async fn read(path: &str) -> Result<String, Box<dyn std::error::Error>> {
+pub async fn read(path: &str) -> Result<Vec<u8>, Box<dyn std::error::Error>> {
     let public_path = Path::new(PUBLIC_PATH).join(path);
-    let text = match fs::read_to_string(public_path).await {
-        Ok(text) => text,
-        Err(e) => return Err(Box::new(e)),
+    let bytes = match fs::read(public_path).await {
+        Ok(bytes) => bytes,
+        Err(e) => {
+            eprintln!("Error reading file: {e:?}");
+            return Err(Box::new(e));
+        },
     };
-    Ok(text)
+    Ok(bytes)
 }
 ``` 
 
@@ -376,9 +379,20 @@ Notice on line 3, I am registering a route that will call the `web_handler` func
 ```rust { linenos=1 }
 async fn web_handler(path: warp::path::FullPath) -> Result<impl warp::Reply, warp::Rejection> {
     let addr = "http://localhost:50051";
-    let mut client = IrlyClient::connect(addr).await.unwrap();
-    let Ok(response) = request_file(&mut client, path.as_str()).await else {
-        return Err(warp::reject::not_found());
+    // Connect to the hub, accept Gzip, and set max message sizes
+    let mut client = IrlyClient::connect(addr)
+        .await
+        .unwrap()
+        .accept_compressed(CompressionEncoding::Gzip)
+        .max_decoding_message_size(256 * 1024 * 1024)
+        .max_encoding_message_size(256 * 1024 * 1024);
+
+    let response = match request_file(&mut client, path.as_str()).await {
+        Ok(response) => response,
+        Err(e) => {
+            eprintln!("Error: {e:?}");
+            return Err(warp::reject::not_found());
+        }
     };
 
     let res_ref = response.get_ref();
