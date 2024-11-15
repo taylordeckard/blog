@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Grpc on Taylor&#39;s Blog</title>
+    <link>https://www.taylordeckard.me/blog/tags/grpc/</link>
+    <description>Recent content in Grpc on Taylor&#39;s Blog</description>
+    <generator>Hugo -- 0.129.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.taylordeckard.me/blog/tags/grpc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating a Website on a Hidden Network</title>
+      <link>https://www.taylordeckard.me/blog/posts/irly/</link>
+      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://www.taylordeckard.me/blog/posts/irly/</guid>
+      <description>After my last post on Creating a Networked Client to Power Centralized Insights, I started to think about how I could use a similar design to create a decentralized website. Users could run their clients locally, store information on their own machines, and connect to other clients from the central hub. An interesting design choice, I thought, would be for the website to only be accessible from the local network when the client is running.</description>
+    </item>
+  </channel>
+</rss>
