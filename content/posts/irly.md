@@ -315,8 +315,18 @@ impl Irly for IrlyService {
             return Err(tonic::Status::not_found("file not found"));
         }
 
+        let mut file_path = input.file_path.clone();
+        // Remove leading slash from path
+        if input.file_path.starts_with('/') {
+            file_path.remove(0);
+        }
+        // Default a request for "/" to index.html
+        if &input.file_path == "/" {
+            file_path = "index.html".to_string();
+        }
+
         let response = proto::GetFileResponse {
-            file_path: input.file_path.clone(),
+            file_path: file_path.clone(),
             file_content: file.unwrap(),
         };
 
@@ -417,3 +427,5 @@ After spinning up the hub and the client again, here are the results of navigati
 ![irly results](/blog/images/irly/irly_results.png)
 
 So yes, it works! The client is serving the website from the hub. This is a simple example, but it demonstrates how a decentralized website could be created using gRPC and Rust. I think this could be a bit more interesting if the hub can facilitate peer discovery and the transfer of data between clients. That might be a topic for another post. 😄
+
+Check out the code for this post on [GitHub](https://github.com/taylordeckard/irly).
