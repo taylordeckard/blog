@@ -6,8 +6,43 @@
     <description>Recent content in Tags on Taylor&#39;s Blog</description>
     <generator>Hugo -- 0.129.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 04 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.taylordeckard.me/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Iceberg</title>
+      <link>https://www.taylordeckard.me/blog/tags/iceberg/</link>
+      <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.taylordeckard.me/blog/tags/iceberg/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Programming</title>
+      <link>https://www.taylordeckard.me/blog/tags/programming/</link>
+      <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.taylordeckard.me/blog/tags/programming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rust</title>
+      <link>https://www.taylordeckard.me/blog/tags/rust/</link>
+      <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.taylordeckard.me/blog/tags/rust/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spark</title>
+      <link>https://www.taylordeckard.me/blog/tags/spark/</link>
+      <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.taylordeckard.me/blog/tags/spark/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vim</title>
+      <link>https://www.taylordeckard.me/blog/tags/vim/</link>
+      <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.taylordeckard.me/blog/tags/vim/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Distributed Systems</title>
       <link>https://www.taylordeckard.me/blog/tags/distributed-systems/</link>
@@ -27,20 +62,6 @@
       <link>https://www.taylordeckard.me/blog/tags/javascript/</link>
       <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
       <guid>https://www.taylordeckard.me/blog/tags/javascript/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Programming</title>
-      <link>https://www.taylordeckard.me/blog/tags/programming/</link>
-      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://www.taylordeckard.me/blog/tags/programming/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Rust</title>
-      <link>https://www.taylordeckard.me/blog/tags/rust/</link>
-      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://www.taylordeckard.me/blog/tags/rust/</guid>
       <description></description>
     </item>
     <item>

@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.taylordeckard.me/blog/posts/vimparq/</loc>
+    <lastmod>2025-05-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.taylordeckard.me/blog/tags/iceberg/</loc>
+    <lastmod>2025-05-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.taylordeckard.me/blog/posts/</loc>
+    <lastmod>2025-05-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.taylordeckard.me/blog/tags/programming/</loc>
+    <lastmod>2025-05-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.taylordeckard.me/blog/tags/rust/</loc>
+    <lastmod>2025-05-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.taylordeckard.me/blog/tags/spark/</loc>
+    <lastmod>2025-05-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.taylordeckard.me/blog/tags/</loc>
+    <lastmod>2025-05-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.taylordeckard.me/blog/</loc>
+    <lastmod>2025-05-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.taylordeckard.me/blog/tags/vim/</loc>
+    <lastmod>2025-05-04T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.taylordeckard.me/blog/posts/irly/</loc>
     <lastmod>2024-11-11T00:00:00+00:00</lastmod>
   </url><url>
@@ -15,21 +42,6 @@
     <lastmod>2024-11-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.taylordeckard.me/blog/tags/javascript/</loc>
-    <lastmod>2024-11-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.taylordeckard.me/blog/posts/</loc>
-    <lastmod>2024-11-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.taylordeckard.me/blog/tags/programming/</loc>
-    <lastmod>2024-11-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.taylordeckard.me/blog/tags/rust/</loc>
-    <lastmod>2024-11-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.taylordeckard.me/blog/tags/</loc>
-    <lastmod>2024-11-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.taylordeckard.me/blog/</loc>
     <lastmod>2024-11-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.taylordeckard.me/blog/tags/websockets/</loc>
